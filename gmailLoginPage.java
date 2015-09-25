@@ -11,8 +11,6 @@ import static org.junit.Assert.*;
  */
 public class gmailLoginPage {
 
-
-
   public static void main(String args[]){
     WebDriver driver = new FirefoxDriver();
     driver.get("http://gmail.com");
@@ -26,9 +24,7 @@ public class gmailLoginPage {
     testHomePageFooterHelpLink(driver);
     driver.close();
   }
-  /*
-   * Verify banners and tags lines in Gmail home page.
-   */
+  //Verify banners and tags lines in Gmail home page.
   public static void testGmailHomePageBanner(WebDriver driver){
     WebElement banner = driver.findElement(By.xpath("html/body/div/div[2]/div[1]/h1"));
     WebElement bannerhidden = driver.findElement(By.xpath("html/body/div/div[2]/div[1]/h2"));
@@ -39,9 +35,7 @@ public class gmailLoginPage {
     assertEquals("Home page tagline text missing", "One Google Account for everything Google", tagline.getText());
   }  
 
-  /*
-   * Verify Google logo in Gmail home page.
-   */
+   // Verify Google logo in Gmail home page.
   public static void testGmailLogAndStrip(WebDriver driver){
     WebElement logo = driver.findElement(By.className("logo"));
     WebElement logostrip = driver.findElement(By.className("logo-strip"));
@@ -50,41 +44,28 @@ public class gmailLoginPage {
     assertEquals("Logo Strip missing from home page.", "url(\"https://ssl.gstatic.com/accounts/ui/wlogostrip_230x17_1x.png\")", logostrip.getCssValue("background-image"));
   }
 
-  /*
-   * Verify Need Help link in Gmail home page
-   */
-
+   // Verify Need Help link in Gmail home page
   public static void testGmailHomePageNeedHelpLink(WebDriver driver){
     WebElement needhelp = driver.findElement(By.xpath(".//*[@id='gaia_firstform']/div/a"));
     assertEquals("Need Help missing", "Need help?", needhelp.getText());
   }
 
-  /*
-   * Verify Create Account link in Gmail home page
-   */
-
+   // Verify Create Account link in Gmail home page
   public static void testGmailCreateAccountLink(WebDriver driver){
     WebElement createaccount = driver.findElement(By.xpath(".//*[@id='link-signup']/a"));
     assertEquals("Create Account link missing", "Create account", createaccount.getText());
   }
-
-  /*
-   * Verify Footer About Google link in Gmail home page
-   */
-
+  
+   // Verify Footer About Google link in Gmail home page
   public static void testHomePageFooterAboutGoogleLink(WebDriver driver){
-
     String winHandleBefore = driver.getWindowHandle();
-
     WebElement aboutgooglelink = driver.findElement(By.xpath(".//*[@id='footer-list']/li[1]/a"));
     assertEquals("Create Account link missing", "About Google", aboutgooglelink.getText());
-
     aboutgooglelink.click();
-
+    
     for(String winHandle : driver.getWindowHandles()){
       driver.switchTo().window(winHandle);
     }
-
     WebElement newTitle = driver.findElement(By.xpath(".//*[@id='corp-crumb']/ol/li"));
     assertEquals("New About page Found", "About Google", newTitle.getText());
     // Close the new opened window:
@@ -92,76 +73,51 @@ public class gmailLoginPage {
     driver.switchTo().window(winHandleBefore); 
   }
 
-  /*
-   * Verify footer Privacy Help link in Gmail home page
-   */
-
+   // Verify footer Privacy Help link in Gmail home page
   public static void testHomePageFooterPrivacyLink(WebDriver driver){
-
     String winHandleBefore = driver.getWindowHandle();
-
     WebElement privacylink = driver.findElement(By.xpath(".//*[@id='footer-list']/li[2]/a"));
     assertEquals("Create Account link missing", "Privacy", privacylink.getText());
-
     privacylink.click();
-
+    
     for(String winHandle : driver.getWindowHandles()){
       driver.switchTo().window(winHandle);
     }
-
     WebElement newPageTitle = driver.findElement(By.xpath("//h1[contains(.,'Welcome to the Google Privacy Policy')]"));
     assertEquals("New About page Found", "Welcome to the Google Privacy Policy", newPageTitle.getText());
-    // Close the new opened window:
     driver.close();
     driver.switchTo().window(winHandleBefore); 
   }
 
-  /*
-   * Verify footer Terms Help link in Gmail home page
-   */
-
+   // Verify footer Terms Help link in Gmail home page
   public static void testHomePageFooterTermsLink(WebDriver driver){
-
     String winHandleBefore = driver.getWindowHandle();
-
     WebElement termslink = driver.findElement(By.xpath(".//*[@id='footer-list']/li[3]/a"));
     assertEquals("Create Account link missing", "Terms", termslink.getText());
-
     termslink.click();
 
     for(String winHandle : driver.getWindowHandles()){
       driver.switchTo().window(winHandle);
     }
-
     WebElement newPageTitle = driver.findElement(By.xpath("//h1[contains(.,'Google Terms of Service')]"));
     assertEquals("New About page Found", "Google Terms of Service", newPageTitle.getText());
-    // Close the new opened window:
     driver.close();
     driver.switchTo().window(winHandleBefore); 
   }
-  /*
-   * Verify footer Help link in Gmail home page
-   */
 
+  // Verify footer Help link in Gmail home page
   public static void testHomePageFooterHelpLink(WebDriver driver){
-
     String winHandleBefore = driver.getWindowHandle();
-
     WebElement helplink = driver.findElement(By.xpath(".//*[@id='footer-list']/li[4]/a"));
     assertEquals("Create Account link missing", "Help", helplink.getText());
-
     helplink.click();
 
     for(String winHandle : driver.getWindowHandles()){
       driver.switchTo().window(winHandle);
     }
-
     WebElement newPageTitle = driver.findElement(By.xpath("//h3[contains(.,'Get started with Google Accounts')]"));
     assertEquals("New About page Found", "Get started with Google Accounts", newPageTitle.getText());
-    // Close the new opened window:
     driver.close();
     driver.switchTo().window(winHandleBefore); 
   }
 }
-
-
