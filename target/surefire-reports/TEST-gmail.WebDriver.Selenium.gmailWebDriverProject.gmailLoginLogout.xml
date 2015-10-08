@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" time="33.29" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" time="35.654" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/local/buildtools/java/jdk8-google-v7-64/jre/lib/amd64"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
-    <property name="test" value="gmailLoginLogout"/>
+    <property name="test" value="gmailHomePageLinks,gmailLoginLogout"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/usr/local/google/home/sreenivasa/Experimental/GOffice-Workspace/gmailWebDriverProject"/>
     <property name="java.runtime.version" value="1.8.0-google-v7-103157491-102797135"/>
@@ -42,7 +42,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/local/buildtools/java/jdk8-google-v7-64/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -e -Dtest=gmailLoginLogout test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -e -Dtest=gmailHomePageLinks,gmailLoginLogout test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -60,8 +60,8 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testInvalidGmailID" time="6.637"/>
-  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testInvalidPassword" time="6.812"/>
-  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testGmailLogin" time="9.917"/>
-  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testGmailLogOut" time="9.874"/>
+  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testGmailLoginWithInvalidGmailId" time="6.197"/>
+  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testGmailLoginWithInvalidPassword" time="7.271"/>
+  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testGmailLogOutAfterSuccessfullLogin" time="11.382"/>
+  <testcase classname="gmail.WebDriver.Selenium.gmailWebDriverProject.gmailLoginLogout" name="testGmailLoginForValidUser" time="10.751"/>
 </testsuite>
